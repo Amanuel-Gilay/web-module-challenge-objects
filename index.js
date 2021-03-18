@@ -15,8 +15,8 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(name,price,category){
+    return {name,price,category};
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -28,7 +28,7 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
+console.log(createMenuItem('pizza',5,'lunch'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -49,6 +49,12 @@ export const burger = {
   price: 18, 
   category: "Lunch", 
   /*Your code here*/
+  discount: function(string){
+   const newValue = [];
+   this.price-(this.price*0.25);
+
+
+  }
 }
 
 
@@ -69,6 +75,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
+console.log(reviews[5].feedback)
 
 
 
@@ -78,7 +85,8 @@ Using the reviews array above do the following: (no function needed)
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
-
+reviews.unshift('Amanuel', 5, 'London Englad is cool');
+console.log(reviews);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -102,12 +110,9 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
+function getReviewByIndex(array) {
   /*Your code here*/
-}
 
-
-  
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
@@ -123,7 +128,12 @@ Use the getLastReview function below to do the following:
 
 function getLastReview(/*Your code here*/) {
   /*Your code here*/
-} 
+const finalstring=array.length-1;
+
+return `${array[finalstring].name} gave the restaurant a ${array[finalstring].rating} star review, and their feedback was: ${array[finalstring].feedback}`
+
+}
+console.log(getLastReview(reviews));
 
 
 
