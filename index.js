@@ -51,11 +51,22 @@ export const burger = {
   /*Your code here*/
   discount: function(string){
    const newValue = [];
-   this.price-(this.price*0.25);
+   if (string==='student || string === teacher') {
+    return this.price-(this.price*0.25);
+   } else if (string==='public'){
+     return this.price-(this.price*0.1);
+   }
+
+   }
+
+   }
+
+console.log(burger.discount('public'));
+  
+  
+  
 
 
-  }
-}
 
 
 
@@ -85,7 +96,7 @@ Using the reviews array above do the following: (no function needed)
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
-reviews.unshift('Amanuel', 5, 'London Englad is cool');
+reviews.unshift({name:'Amanuel', rating: 5, feedback :'London Englad is cool'});
 console.log(reviews);
 
 
@@ -94,7 +105,8 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
-
+reviews[8].feedback= "this place is chill with really cool people, great for getting work done on weekdays";
+console.log(reviews);
 
 
 
@@ -110,9 +122,11 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(array) {
+function getReviewByIndex(array, int) {
+  return `${array[int].name} gave the restaurant a ${array[int].rating} star review, and their feedback was: ${array[int].feedback}`;
+}
   /*Your code here*/
-
+  console.log(getReviewByIndex(reviews,0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
@@ -126,7 +140,7 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
+function getLastReview(array) {
   /*Your code here*/
 const finalstring=array.length-1;
 
